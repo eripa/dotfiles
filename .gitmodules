@@ -1,6 +1,6 @@
 [submodule "scripts"]
 	path = scripts
-	url = git@github.com:matthewmccullough/scripts.git
+	url = git@github.com:eripa/scripts.git
 [submodule "z-zsh"]
 	path = z-zsh
 	url = git://github.com/sjl/z-zsh.git
