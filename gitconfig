@@ -1,6 +1,6 @@
 [user]
-	name = Matthew McCullough
-	email = matthew@github.com
+	name = Eric Ripa
+	email = eric.ripa@me.com
 
 [color]
 # ui = true is a superset of all the more specific color options
@@ -14,30 +14,15 @@
 	# status = auto
 	# branch = auto
 	
-[color "branch"]
-	#current = yellow reverse
-	#local = yellow
-	#remote = green
-[color "diff"]
-	#meta = yellow bold
-	#frag = magenta bold
-	#old = red bold
-	#new = green bold
-[color "status"]
-	#added = yellow
-	#changed = green
-	#untracked = cyan
-
 [gui]
 	fontdiff = -family Monaco -size 10 -weight normal -slant roman -underline 0 -overstrike 0
-	recentrepo = /Users/mccm06/Documents/Temp/Scratch/hello/hgw1
 
 [core]
 	excludesfile = ~/.gitignore
 	quotepath = false
 	autocrlf = input
 	safecrlf = warn
-	editor = mate -w
+	editor = subl -w
 
 [alias]
 	br = branch -a
@@ -100,7 +85,8 @@
 	purgeme = !git clean -fd && git reset --hard
 	prunenow = gc --prune=now
 	ri = rebase --interactive --autosquash
-	lol = log --pretty=oneline --graph --abbrev-commit --all
+	lol2 = log --pretty=oneline --graph --abbrev-commit --all
+	lol = log --oneline --graph --decorate
 	blg = log --graph --decorate --all --abbrev-commit --pretty=oneline
 	slog = log --graph --simplify-by-decoration --all --abbrev-commit --pretty=oneline
 	lgso = log --graph --date=short --pretty=format:'%C(yellow)%h%Creset %cn%x09%cd %s%C(green bold)%d'
@@ -155,7 +141,7 @@
 	legitgraft = !legit graft \"$@\"
 	
 	#Searches
-	findjuniodeletes = log --author=Junio --diff-filter=D --since=2.years.ago
+	#findjuniodeletes = log --author=Junio --diff-filter=D --since=2.years.ago
 	
 	#https://git.wiki.kernel.org/index.php?title=Aliases
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
@@ -178,7 +164,6 @@
 	pullsvn = svn rebase
 	nfjsunpushed = log origin/master..master --oneline
 	rtheirs = !git checkout --theirs ./ && git add . && git rebase --continue
-
 
 [apply]
 	whitespace = nowarn
@@ -211,22 +196,18 @@
 	insteadOf = "ghg://"
 	pushInsteadOf = "ghg://"
 	# Example: git clone ghg://ntschutta/emacs
-[url "git://github.com/matthewmccullough/"]
-    insteadOf = "ghgm://"
-    pushInsteadOf = "ghgm://"
-    # Example: git clone ghgm://hellogitworld
 [url "git@github.com:"]
 	insteadOf = "ghs://"
 	pushInsteadOf = "ghs://"
-[url "git@github.com:matthewmccullough/"]
-    insteadOf = "ghsm://"
-    pushInsteadOf = "ghsm://"
+[url "git@github.com:eripa/"]
+    insteadOf = "ghse://"
+    pushInsteadOf = "ghse://"
 [url "https://github.com/"]
 	insteadOf = "ghh://"
 	pushInsteadOf = "ghh://"
-[url "https://github.com/matthewmccullough/"]
-    insteadOf = "ghhm://"
-    pushInsteadOf = "ghhm://"
+[url "https://github.com/eripa/"]
+    insteadOf = "ghhe://"
+    pushInsteadOf = "ghhe://"
 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
@@ -237,15 +218,15 @@
 
 [github]
     # https://github.com/blog/180-local-github-config
-	user = matthewmccullough
+	user = eripa
     #token = MOVEALONG
 [hub]
 	protocol = https
 [gist]
 	private = yes
 	browse = yes
-[ghi]
-	token = 64a818626c1c27d9abf2f9cbacc460f11e0d973f
+#[ghi]
+	#token = 64a818626c1c27d9abf2f9cbacc460f11e0d973f
 #[credential]
 #	helper = cache --timeout=300
 
