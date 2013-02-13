@@ -4,7 +4,7 @@
 
 ###################
 # Set textmate as our default command line editor
-export EDITOR='mate -w'
+export EDITOR='subl -w'
 
 ###################
 # Load paths and environment variables
@@ -16,6 +16,3 @@ source ~/.shellaliases
 # RVM Ruby Selector
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-###################
-# Load rbenv, an alternative to rvm for Ruby selection on a per-project basis
-eval "$(rbenv init -)"

@@ -12,9 +12,10 @@ export ZSH=$HOME/.dotfiles/oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
-#export ZSH_THEME="gozilla"
-export ZSH_THEME="fino"
-#export ZSH_THEME="takashiyoshida"
+export ZSH_THEME="candy-kingdom"
+#export ZSH_THEME="bira"
+#export ZSH_THEME="aussiegeek"
+#export ZSH_THEME="fino"
 #export ZSH_THEME="random"
 
 # Set to this to use case-sensitive completion
@@ -30,6 +31,6 @@ export CASE_SENSITIVE="true"
 # export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
-plugins=(git battery brew osx gradle ant compleat dirpersist gem ssh-agent cloudapp ruby textmate sublime)
+plugins=(git battery brew osx gradle ant compleat dirpersist gem ssh-agent sublime)
 
 source $ZSH/oh-my-zsh.sh

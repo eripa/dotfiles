@@ -42,21 +42,14 @@ pushd ~
 
 symlinkifne .bash_profile
 symlinkifne .bashrc
-symlinkifne .boom
-symlinkifne .boom.conf
-symlinkifne .cloudapp
 symlinkifne .conf
-symlinkifne .gemrc
 symlinkifne .gitconfig
 symlinkifne .gitignore
-symlinkifne .netrc
 symlinkifne .profile
-symlinkifne .rvmrc
 symlinkifne .shellactivities
 symlinkifne .shellaliases
 symlinkifne .shellpaths
 symlinkifne .shellvars
-symlinkifne .slate
 symlinkifne .vimrc
 symlinkifne .zlogout
 symlinkifne .zprofile

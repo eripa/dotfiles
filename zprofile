@@ -29,3 +29,11 @@ setopt    incappendhistory  #Immediately append to the history file, not just wh
 # rupa/z setup (path frecency with tab completion)
 ##############################################################################
 . ~/.dotfiles/z-rupa/z.sh
+
+##################################################
+# source csh
+##################################################
+setenv() {
+  echo setting $1 to $2
+    export $1=$2
+}
