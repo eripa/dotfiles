@@ -2,10 +2,11 @@
 # Shell agnostic path setup
 ########################################################################
 
-# Matthew's Scripts
+# Scripts
 export PATH=$PATH:.
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/.dotfiles/scripts
+export PATH=$PATH:$HOME/Dropbox/scripts
 
 # Brew
 export PATH=/usr/local/sbin:$PATH

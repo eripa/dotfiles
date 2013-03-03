@@ -55,6 +55,8 @@ alias timemachine.disablelocalversions='sudo tmutil disablelocal'
 
 alias hexdumpfile='od -h'
 
+alias gitx="open -a gitx"
+
 # Flush the DNS on Mac
 alias network.dnsflush='dscacheutil -flushcache'
 

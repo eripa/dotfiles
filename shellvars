@@ -34,3 +34,11 @@ export GROOVY_HOME=/usr/local/Cellar/groovy/2.1.1/libexec
 #export PAGER="less"
 # Set less to have a default flag of -R (RAW) so color passes through
 #export LESS="-R"
+#
+# Python VirtualEnv Wrapper
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Node version manager
+source ~/.nvm/nvm.sh
+
+
