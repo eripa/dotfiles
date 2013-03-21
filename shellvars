@@ -41,9 +41,11 @@ export GROOVY_HOME=/usr/local/Cellar/groovy/2.1.1/libexec
 # Node version manager
 [[ -r "~/.nvm/nvm.sh" ]] && source ~/.nvm/nvm.sh
 
-# Setup http-proxy
+## Setup http-proxy
 export http_proxy="http://localhost:3328"
 export https_proxy="http://localhost:3328"
+# using https (git) over proxy will mess upp the certs.. ignore them and take caution..
+export GIT_SSL_NO_VERIFY=true
 
 ## Cygwin fixes
 # looks like my current zsh themes "candy-kingdom" tries to use hg if available... set the following to ignore hg
