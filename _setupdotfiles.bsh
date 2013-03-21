@@ -30,6 +30,7 @@ pushd ~
 .zshenv
 .zshrc
 .box-name
+.minttyrc
 
 # Link
 .bash_history
@@ -59,6 +60,7 @@ pushd ~
 .zshenv
 .zshrc
 .box-name
+.minttyrc
 
 
 # Cleanup

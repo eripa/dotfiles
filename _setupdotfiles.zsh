@@ -58,6 +58,7 @@ symlinkifne .zprofile
 symlinkifne .zshenv
 symlinkifne .zshrc
 symlinkifne .box-name
+symlinkifne .minttyrc
 
 popd
 
