@@ -4,7 +4,7 @@
 # oh-my-zsh setup
 # ---------------------------------------------------------------------
 
-# Path to your oh-my-zsh configuration.
+# Path to your oh-my-zsh configurations.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
 export ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh-custom
 
