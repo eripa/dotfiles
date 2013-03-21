@@ -1,6 +1,7 @@
 [user]
 	name = Eric Ripa
-	email = eric@ripa.io
+	#email = eric@ripa.io
+	# email removed to allow --system specify email (for corporate emails)
 
 [color]
 # ui = true is a superset of all the more specific color options
