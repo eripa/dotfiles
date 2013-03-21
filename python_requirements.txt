@@ -1,9 +1,9 @@
-distribute==0.6.19
+distribute==0.6.35
 pypm==1.3.4
 pythonselect==1.3
 pywin32==214
 stevedore==0.8
-virtualenv==1.6.1
+virtualenv==1.9.1
 virtualenv-clone==0.2.4
 virtualenvwrapper==3.7
 wsgiref==0.1.2
