@@ -27,10 +27,10 @@ PROMPT='
 %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}$(box_name)%{$reset_color%}:%{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(hg_prompt_info)$(git_prompt_info)
 %(?,,%{${fg_bold[gray]}%}[%?]%{$reset_color%} )$ '
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" (%{$fg[magenta]%}branch: "
+ZSH_THEME_GIT_PROMPT_PREFIX=" (%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}?"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[orange]%}!"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}?"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[yellow]%}!"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%})"
 
 local return_status="%{$fg[red]%}%{$reset_color%}"
