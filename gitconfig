@@ -237,3 +237,12 @@
 [push]
 	default = matching
 
+[core]
+    gitproxy = bin/git-proxy-local.sh for github.com
+    gitproxy = bin/git-proxy-local.sh for googlecode.com
+[http]
+    proxy = http://localhost:3328
+
+[url "https://@"]
+    insteadOf = git://
+
