@@ -44,3 +44,9 @@ export GROOVY_HOME=/usr/local/Cellar/groovy/2.1.1/libexec
 # Setup http-proxy
 export http_proxy="http://localhost:3328"
 export https_proxy="http://localhost:3328"
+
+## Cygwin fixes
+# looks like my current zsh themes "candy-kingdom" tries to use hg if available... set the following to ignore hg
+export OH_MY_ZSH_HG="foo"
+
+
