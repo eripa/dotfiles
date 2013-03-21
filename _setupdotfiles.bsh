@@ -29,6 +29,7 @@ pushd ~
 .zsh-update
 .zshenv
 .zshrc
+.box-name
 
 # Link
 .bash_history
@@ -57,6 +58,7 @@ pushd ~
 .zsh-update
 .zshenv
 .zshrc
+.box-name
 
 
 # Cleanup
