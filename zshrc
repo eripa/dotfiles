@@ -6,13 +6,14 @@
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
+export ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh-custom
 
 # Set name of the theme to load.
 # Look in $ZSH/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
-export ZSH_THEME="candy-kingdom"
+export ZSH_THEME="candy-kingdom-custom"
 #export ZSH_THEME="bira"
 #export ZSH_THEME="aussiegeek"
 #export ZSH_THEME="fino"
@@ -31,7 +32,7 @@ export CASE_SENSITIVE="true"
 # export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
-plugins=(git battery brew gem rvm osx gradle compleat dirpersist ssh-agent sublime)
+plugins=(git brew gem rvm osx gradle compleat ssh-agent sublime wakeonlan)
 
 unsetopt CORRECT_ALL
 unsetopt AUTO_MENU

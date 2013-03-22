@@ -167,3 +167,6 @@ function screenshot.setpng() {
 # Quick way to rebuild the Launch Services database and get rid
 # of duplicates in the Open With submenu.
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+# alias for killing stupid sims cider wrapper..
+alias killsims='ps aux | grep -i "The Sims 3" | grep -v grep | awk '{print $2}' | xargs sudo kill'

@@ -3,7 +3,7 @@
 #############################################################
 
 ###################
-# Set textmate as our default command line editor
+# Set Sublime as our default command line editor
 export EDITOR='subl -w'
 
 ###################
