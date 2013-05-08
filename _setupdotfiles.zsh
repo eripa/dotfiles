@@ -45,6 +45,7 @@ symlinkifne .bashrc
 symlinkifne .conf
 symlinkifne .gitconfig
 symlinkifne .gitignore
+symlinkifne .hgrc
 symlinkifne .profile
 symlinkifne .shellactivities
 symlinkifne .shellaliases

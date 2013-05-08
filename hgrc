@@ -1,0 +1,20 @@
+[ui]
+username = Eric Ripa <eric@ripa.io>
+
+[diff]
+git = True
+
+[pager]
+pager = less -FRSX
+
+[extensions]
+hgext.color =
+hgext.mq =
+hgext.pager =
+hgext.rebase =
+hgext.schemes =
+hgext.graphlog =
+prompt = ~/.dotfiles/hg-prompt/prompt.py
+
+[schemes]
+bb = ssh://hg@bitbucket.org/
