@@ -1,5 +1,6 @@
 [ui]
 username = Eric Ripa <eric@ripa.io>
+verbose = True
 
 [diff]
 git = True
