@@ -1,6 +1,6 @@
 [user]
 	name = Eric Ripa
-	email = eric.ripa@me.com
+	email = eric@ripa.io
 
 [color]
 # ui = true is a superset of all the more specific color options
@@ -23,6 +23,7 @@
 	autocrlf = input
 	safecrlf = warn
 	editor = subl -w
+	pager = less -+$LESS -RX
 
 [alias]
 	br = branch -a
