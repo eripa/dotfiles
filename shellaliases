@@ -169,7 +169,7 @@ function screenshot.setpng() {
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
 
 # alias for killing stupid sims cider wrapper..
-alias killsims='ps aux | grep -i "The Sims 3" | grep -v grep | awk '{print $2}' | xargs sudo kill'
+alias killsims="ps aux | grep -i \"The Sims 3\" | grep -v grep | awk '{print $2}' | xargs sudo kill"
 
 # alias for adding wakeonlan roughly..
 alias addwakeonlan="awk '{print $1, $4, $2}' | sed 's/[()]//g' | while read line  ; do name=`echo $line | awk '{print $1}'` ; content=`echo $line | awk '{print $2, $3}'` ; echo $content > .wakeonlan/$name ; done"

@@ -36,9 +36,9 @@ export GROOVY_HOME=/usr/local/Cellar/groovy/2.1.1/libexec
 #export LESS="-R"
 #
 # Python VirtualEnv Wrapper
-source /usr/local/bin/virtualenvwrapper.sh
+[[ -r "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 
 # Node version manager
-source ~/.nvm/nvm.sh
+[[ -r "~/.nvm/nvm.sh" ]] && source ~/.nvm/nvm.sh
 
 
