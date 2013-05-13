@@ -176,3 +176,11 @@ alias addwakeonlan="awk '{print $1, $4, $2}' | sed 's/[()]//g' | while read line
 
 ## taskwarrior
 alias t="task"
+alias tls="task ls"
+alias tlr="task ls +review"
+alias my="task ls +eric"
+norev() { task "$*" mod -review ; }
+rev() { task "$*" mod +review ; }
+
+# cygwin setup
+alias cygsetup="cygstart -- Downloads/setup\ \(1\).exe -K http://cygwinports.org/ports.gpg"
