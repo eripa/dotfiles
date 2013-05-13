@@ -10,3 +10,6 @@
 [submodule "z-rupa"]
 	path = z-rupa
 	url = https://github.com/rupa/z
+[submodule "additional_dotfiles"]
+	path = additional_dotfiles
+	url = git://github.com/mathiasbynens/dotfiles.git
