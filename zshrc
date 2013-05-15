@@ -33,7 +33,7 @@ export CASE_SENSITIVE="true"
 # export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
-plugins=(git brew gem rvm osx gradle compleat ssh-agent sublime wakeonlan mercurial)
+plugins=(git brew gem rbenv osx gradle compleat ssh-agent sublime wakeonlan mercurial)
 
 unsetopt CORRECT_ALL
 unsetopt AUTO_MENU

@@ -48,5 +48,6 @@ export PATH=~/.rbenv/bin:$PATH
 PATH=$PATH:/Applications/Dev/jgit
 
 # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
+## use rbenv instead
+#PATH=$PATH:$HOME/.rvm/bin
 

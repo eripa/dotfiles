@@ -3,8 +3,9 @@
 #############################################################
 
 ###################
-# Set Sublime as our default command line editor
-export EDITOR='subl -w'
+# Set vim as our default command line editor and sublime as gui editor
+export EDITOR='vim'
+export WINEDITOR='subl -w'
 
 ###################
 # Load paths and environment variables
@@ -13,6 +14,4 @@ source ~/.shellpaths
 source ~/.shellaliases
 
 ###################
-# RVM Ruby Selector
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
