@@ -93,6 +93,7 @@ alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v
 # -p Postpend slash to folders
 alias ls='ls -G -h -p '
 alias ll='ls -l -G -h -p '
+alias mmv='noglob zmv -W'
 
 #########################################
 # Utility Functions
@@ -177,3 +178,6 @@ alias killsims="ps aux | grep -i \"The Sims 3\" | grep -v grep | awk '{print $2}
 
 # alias for adding wakeonlan roughly..
 alias addwakeonlan="awk '{print $1, $4, $2}' | sed 's/[()]//g' | while read line  ; do name=`echo $line | awk '{print $1}'` ; content=`echo $line | awk '{print $2, $3}'` ; echo $content > .wakeonlan/$name ; done"
+
+# alias for fixing coreaudio bug hindering Airplay speakers as output device
+alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
