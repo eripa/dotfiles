@@ -22,7 +22,7 @@
 	quotepath = false
 	autocrlf = input
 	safecrlf = warn
-	editor = subl -w
+	editor = vim
 	pager = less -+$LESS -RX
 
 [alias]
