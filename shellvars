@@ -42,6 +42,12 @@ export GROOVY_HOME=/usr/local/Cellar/groovy/2.1.1/libexec
 [[ -r "~/.nvm/nvm.sh" ]] && source ~/.nvm/nvm.sh
 
 # chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
+if [[ -r "/usr/local/share/chruby/chruby.sh" ]] ; then
+  # Linux
+  source /usr/local/share/chruby/chruby.sh
+else	
+  # OS X - Homebrew
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+fi
 source /usr/local/share/chruby/auto.sh
 chruby ruby-2.0

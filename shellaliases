@@ -180,4 +180,4 @@ alias killsims="ps aux | grep -i \"The Sims 3\" | grep -v grep | awk '{print $2}
 alias addwakeonlan="awk '{print $1, $4, $2}' | sed 's/[()]//g' | while read line  ; do name=`echo $line | awk '{print $1}'` ; content=`echo $line | awk '{print $2, $3}'` ; echo $content > .wakeonlan/$name ; done"
 
 # alias for fixing coreaudio bug hindering Airplay speakers as output device
-alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
+#alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
