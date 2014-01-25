@@ -189,3 +189,4 @@ alias find_pi="sudo arp-scan --interface=$interfacename --localnet | grep b8:27:
 
 # sshfs mounts
 alias mount_nao="sshfs -p 22 nao: ~/nao -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,volname=Nao"
+alias mount_aki="sshfs -p 22 aki: ~/aki -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,volname=Aki"
