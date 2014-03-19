@@ -166,7 +166,7 @@ function screenshot.setpng() {
 }
 
 function gi() {
-	curl http://gitignore.io/api/$@ ;
+	curl http://www.gitignore.io/api/$@ ;
 }
 
 # Quick way to rebuild the Launch Services database and get rid
