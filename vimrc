@@ -3,7 +3,7 @@
 " ########################################################################
 
 " set our tabs to four spaces
-set ts=4
+set ts=2
 
 " turn syntax highlighting on by default
 syntax on
@@ -29,3 +29,16 @@ set binary noeol
 
 " make that backspace key work the way it should
 set backspace=indent,eol,start
+
+" expandtab
+set expandtab
+
+" destroy all software tweaks
+"" run current file
+map <Leader>t :w\|:!%<CR>
+"" edit and view alias for current directory
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <Leader>e :edit %%
+map <Leader>v :view %%
+"" switch between two files
+map <Leader><Leader> <C-^>
