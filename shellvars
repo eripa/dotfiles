@@ -35,22 +35,6 @@ export GROOVY_HOME=/usr/local/Cellar/groovy/2.1.1/libexec
 # Set less to have a default flag of -R (RAW) so color passes through
 #export LESS="-R"
 #
-# Python VirtualEnv Wrapper
-[[ -r "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
-
-# Node version manager
-[[ -r "~/.nvm/nvm.sh" ]] && source ~/.nvm/nvm.sh
-
-# chruby
-if [[ -r "/usr/local/share/chruby/chruby.sh" ]] ; then
-  # Linux
-  source /usr/local/share/chruby/chruby.sh
-else	
-  # OS X - Homebrew
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
-fi
-source /usr/local/share/chruby/auto.sh
-chruby ruby-2.0
 
 #########################################################################
 # Other variables

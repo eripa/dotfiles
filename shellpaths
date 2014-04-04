@@ -47,7 +47,26 @@ export PATH=/usr/local/bin:$PATH
 # Git Tools
 PATH=$PATH:/Applications/Dev/jgit
 
-# Add RVM to PATH for scripting
-## use rbenv instead
-#PATH=$PATH:$HOME/.rvm/bin
+# Python VirtualEnv Wrapper
+[[ -r "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
+
+## pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Node version manager
+[[ -r "~/.nvm/nvm.sh" ]] && source ~/.nvm/nvm.sh
+
+# chruby
+if [[ -r "/usr/local/share/chruby/chruby.sh" ]] ; then
+  # Linux
+  source /usr/local/share/chruby/chruby.sh
+else
+  # OS X - Homebrew
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+fi
+source /usr/local/share/chruby/auto.sh
+chruby ruby-2.0
+
+### Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
 
