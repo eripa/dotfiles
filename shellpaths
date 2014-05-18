@@ -65,7 +65,7 @@ else
   source /usr/local/opt/chruby/share/chruby/chruby.sh
 fi
 source /usr/local/share/chruby/auto.sh
-chruby ruby-2.0
+chruby ruby-2.1
 
 ### Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
