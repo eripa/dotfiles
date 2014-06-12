@@ -179,9 +179,6 @@ function logout_all() {
 # of duplicates in the Open With submenu.
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
 
-# alias for killing stupid sims cider wrapper..
-alias killsims="ps aux | grep -i \"The Sims 3\" | grep -v grep | awk '{print $2}' | xargs sudo kill"
-
 # alias for adding wakeonlan roughly..
 alias addwakeonlan="awk '{print $1, $4, $2}' | sed 's/[()]//g' | while read line  ; do name=`echo $line | awk '{print $1}'` ; content=`echo $line | awk '{print $2, $3}'` ; echo $content > .wakeonlan/$name ; done"
 
@@ -191,7 +188,7 @@ alias addwakeonlan="awk '{print $1, $4, $2}' | sed 's/[()]//g' | while read line
 # Find Raspberry Pi on the network
 [ `uname -s` = "Linux" ] && interfacename="eth0"
 [ `uname -s` = "Darwin" ] && interfacename="en0"
-alias find_pi="sudo arp-scan --interface=$interfacename --localnet | grep b8:27:eb"
+alias find_pi="sudo /usr/local/bin/arp-scan --interface=$interfacename --localnet | grep b8:27:eb"
 
 # sshfs mounts
 alias mount_nao="sshfs -p 22 nao: ~/nao -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,volname=Nao"
