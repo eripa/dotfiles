@@ -186,9 +186,12 @@ alias addwakeonlan="awk '{print $1, $4, $2}' | sed 's/[()]//g' | while read line
 #alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
 
 # Find Raspberry Pi on the network
-[ `uname -s` = "Linux" ] && interfacename="eth0"
-[ `uname -s` = "Darwin" ] && interfacename="en0"
-alias find_pi="sudo /usr/local/bin/arp-scan --interface=$interfacename --localnet | grep b8:27:eb"
+[ `uname -s` = "Linux" ] && lan_interface="eth0"
+[ `uname -s` = "Linux" ] && wifi_interface="wlan0"
+[ `uname -s` = "Darwin" ] && lan_interface="en0"
+[ `uname -s` = "Darwin" ] && wifi_interface="en1"
+alias find_pi="sudo /usr/local/bin/arp-scan --interface=$lan_interface --localnet | grep b8:27:eb"
+alias find_pi_wifi="sudo /usr/local/bin/arp-scan --interface=$wifi_interface --localnet | grep b8:27:eb"
 
 # sshfs mounts
 alias mount_nao="sshfs -p 22 nao: ~/nao -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,volname=Nao"
