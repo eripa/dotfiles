@@ -28,6 +28,7 @@ alias rubygems.update='sudo gem update --system'
 alias brew.update='brew update && brew upgrade && brew cleanup'
 alias osx.update='sudo softwareupdate -i -a'
 alias npm.update='npm update npm -g && npm update -g'
+alias pathogen.update='curl -LSso ~/.dotfiles/vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
 
 alias timemachine.enablelocalversions='sudo tmutil enablelocal'
 alias timemachine.disablelocalversions='sudo tmutil disablelocal'

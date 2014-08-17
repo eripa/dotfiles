@@ -52,6 +52,7 @@ symlinkifne .shellaliases
 symlinkifne .shellpaths
 symlinkifne .shellvars
 symlinkifne .vimrc
+symlinkifne .vim
 symlinkifne .zlogout
 symlinkifne .zprofile
 #symlinkifne .zsh
