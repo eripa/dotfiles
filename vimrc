@@ -2,7 +2,10 @@
 " # VI text editor setup
 " ########################################################################
 
-" set our tabs to four spaces
+" pathogen
+execute pathogen#infect()
+
+" set our tabs to two spaces
 set ts=2
 
 " turn syntax highlighting on by default
