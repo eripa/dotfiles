@@ -26,6 +26,7 @@ alias pram.reset='sudo nvram boot-args=”-p -r”'
 
 alias rubygems.update='sudo gem update --system'
 alias brew.update='brew update && brew upgrade && brew cleanup'
+alias brew.caskupdate='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
 alias osx.update='sudo softwareupdate -i -a'
 alias npm.update='npm update npm -g && npm update -g'
 alias pathogen.update='curl -LSso ~/.dotfiles/vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
