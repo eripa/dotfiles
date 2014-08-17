@@ -3,3 +3,6 @@ boom
 cloudapp
 hg-prompt/prompt.pyc
 .hg
+.*.swo
+.*.swp
+.swp
