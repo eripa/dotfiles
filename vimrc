@@ -5,6 +5,10 @@
 " pathogen
 execute pathogen#infect()
 
+" theme
+let g:rehash256 = 1
+color molokai
+
 " set our tabs to two spaces
 set ts=2
 
