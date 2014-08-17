@@ -6,56 +6,41 @@
 
 #########################################
 # Commands to run apps
-#alias run.clojure.repl='java -cp ${CLOJURE_HOME}/clojure.jar clojure.lang.Repl'
-#alias run.jlineclojure.repl='java -cp ${CLOJURE_HOME}/jline-0.9.91.jar:${CLOJURE_HOME}/clojure.jar jline.ConsoleRunner clojure.lang.Repl'
-#alias run.clojure.script='java -cp ${CLOJURE_HOME}/clojure.jar clojure.main'
-
 
 #########################################
 # Commands to change dirs
-alias to.dotfiles='cd ~/.dotfiles'
-alias to.temp='cd ${MYTEMP}'
-alias to.downloads='cd ${MYDOWNLOADS}'
-alias to.dropbox='cd ~/Dropbox'
-alias to.desktop='cd ~/Desktop'
-alias to.process='cd ${MYPROCESS}'
-alias to.docs='cd ${MYDOCUMENTS}'
-alias to.code='cd ${MYCODE}'
-alias to.scratch='cd ${MYSCRATCH}'
-alias to.teach='cd ${MYTEACH}'
-alias to.github='cd ~/Documents/Code/GitHub'
-alias to.homebrew='cd /usr/local/Library'
-
-alias to.gradlecode='cd ~/Documents/Code/Gradle'
-
-alias to.devapps='cd ${MYDEVAPPS}'
-
 
 #################################
 # Simple Program Name Shortening
-alias aq=aquamacs
 alias g=git
 
 
 #############################
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
 # Utilities
 alias zipall='for D in *; do zip -r "$D" "$D"; done'
 
 alias pram.reset='sudo nvram boot-args=”-p -r”'
 
-alias macports.cleansource='sudo port -f uninstall inactive'
-alias macports.cleanold='sudo port clean --all installed'
-
 alias rubygems.update='sudo gem update --system'
-alias macports.update='sudo port selfupdate && sudo port upgrade outdated'
-alias brew.update='brew update && brew upgrade'
+alias brew.update='brew update && brew upgrade && brew cleanup'
+alias osx.update='sudo softwareupdate -i -a'
+alias npm.update='npm update npm -g && npm update -g'
 
 alias timemachine.enablelocalversions='sudo tmutil enablelocal'
 alias timemachine.disablelocalversions='sudo tmutil disablelocal'
 
 alias hexdumpfile='od -h'
 
+# Get week number
+alias week='date +%V'
+
 alias gitx="open -a gitx"
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 # Flush the DNS on Mac
 alias network.dnsflush='dscacheutil -flushcache'
@@ -65,11 +50,20 @@ alias pbcopynn='tr -d "\n" | pbcopy'
 
 # Set the extended MacOS attributes on a file such that Quicklook will open it as text
 alias finder.astext='xattr -wx com.apple.FinderInfo "54 45 58 54 21 52 63 68 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00" $1'
-#alias finder.qltext2='osascript -e tell application "Finder" to set file type of ((POSIX file "$1") as alias) to "TEXT"'
 
-# Git Scribe Commands
-alias gitscribe.gp='git scribe gen pdf && open output/book.pdf'
-alias gitscribe.gh='git scribe gen html && open output/book.html'
+# Recursively delete `.DS_Store` files
+alias osx.cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias osx.emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+alias osx.show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias osx.hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+# Hide/show all desktop icons (useful when presenting)
+alias osx.hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias osx.showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+
+
 
 # Show network connections
 # Often useful to prefix with SUDO to see more system level network usage
@@ -102,42 +96,11 @@ alias mmv='noglob zmv -W'
 function git.nr() { mkdir $1; cd $1; git init; touch README; git add README; git commit -mFirst-commit;}
 
 # Restart Apache on Mac
-alias apacherestart="sudo /usr/sbin/apachectl restart"
-
-# Do a Matrix movie effect of falling characters
-function matrix1() {
-echo -e "\e[1;40m" ; clear ; while :; do echo $LINES $COLUMNS $(( $RANDOM % $COLUMNS)) $(( $RANDOM % 72 )) ;sleep 0.05; done|gawk '{ letters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()"; c=$4; letter=substr(letters,c,1);a[$3]=0;for (x in a) {o=a[x];a[x]=a[x]+1; printf "\033[%s;%sH\033[2;32m%s",o,x,letter; printf "\033[%s;%sH\033[1;37m%s\033[0;0H",a[x],x,letter;if (a[x] >= $1) { a[x]=0; } }}'
-}
-
-function matrix2() {
-echo -e "\e[1;40m" ; clear ; characters=$( jot -c 94 33 | tr -d '\n' ) ; while :; do echo $LINES $COLUMNS $(( $RANDOM % $COLUMNS)) $(( $RANDOM % 72 )) $characters ;sleep 0.05; done|gawk '{ letters=$5; c=$4; letter=substr(letters,c,1);a[$3]=0;for (x in a) {o=a[x];a[x]=a[x]+1; printf "\033[%s;%sH\033[2;32m%s",o,x,letter; printf "\033[%s;%sH\033[1;37m%s\033[0;0H",a[x],x,letter;if (a[x] >= $1) { a[x]=0; } }}'
-}
-
-function matrix3() {
-echo -e "\e[1;40m" ; clear ; while :; do echo $LINES $COLUMNS $(( $RANDOM % $COLUMNS)) $( printf "\U$(( $RANDOM % 500 ))" ) ;sleep 0.05; done|gawk '{c=$4; letter=$4;a[$3]=0;for (x in a) {o=a[x];a[x]=a[x]+1; printf "\033[%s;%sH\033[2;32m%s",o,x,letter; printf "\033[%s;%sH\033[1;37m%s\033[0;0H",a[x],x,letter;if (a[x] >= $1) { a[x]=0; } }}'
-}
+#alias apacherestart="sudo /usr/sbin/apachectl restart"
 
 # Use Mac OSX Preview to open a man page in a more handsome format
 function manp() {
   man -t $1 | open -f -a /Applications/Preview.app
-}
-
-# Show normally hidden system and dotfile types of files
-# in Mac OSX Finder
-function finder.showhiddenfiles() {
-  defaults write com.apple.Finder AppleShowAllFiles YES
-  osascript -e 'tell application "Finder" to quit'
-  sleep 0.25
-  osascript -e 'tell application "Finder" to activate'
-}
-
-# Hide (back to defaults) normally hidden system and dotfile types of files
-# in Mac OSX Finder
-function finder.hidehiddenfiles() {
-  defaults write com.apple.Finder AppleShowAllFiles NO
-  osascript -e 'tell application "Finder" to quit'
-  sleep 0.25
-  osascript -e 'tell application "Finder" to activate'
 }
 
 # Get (cache) all Cheat sheets
@@ -182,9 +145,6 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 # alias for adding wakeonlan roughly..
 alias addwakeonlan="awk '{print $1, $4, $2}' | sed 's/[()]//g' | while read line  ; do name=`echo $line | awk '{print $1}'` ; content=`echo $line | awk '{print $2, $3}'` ; echo $content > .wakeonlan/$name ; done"
 
-# alias for fixing coreaudio bug hindering Airplay speakers as output device
-#alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
-
 # Find Raspberry Pi on the network
 [ `uname -s` = "Linux" ] && lan_interface="eth0"
 [ `uname -s` = "Linux" ] && wifi_interface="wlan0"
@@ -194,5 +154,58 @@ alias find_pi="sudo /usr/local/bin/arp-scan --interface=$lan_interface --localne
 alias find_pi_wifi="sudo /usr/local/bin/arp-scan --interface=$wifi_interface --localnet | grep b8:27:eb"
 
 # sshfs mounts
-alias mount_nao="sshfs -p 22 nao: ~/nao -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,volname=Nao"
-alias mount_aki="sshfs -p 22 aki: ~/aki -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,volname=Aki"
+alias mount_ssh="mkdir ~/${1} &> /dev/null && sshfs -p 22 ${1}: ~/${1} -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,volname=${1}"
+
+# Add note to Notes.app (OS X 10.8)
+# Usage: `note 'title' 'body'` or `echo 'body' | note`
+# Title is optional
+function note() {
+	local title
+	local body
+	if [ -t 0 ]; then
+		title="$1"
+		body="$2"
+	else
+		title=$(cat)
+	fi
+	osascript >/dev/null <<EOF
+tell application "Notes"
+	tell account "iCloud"
+		tell folder "Notes"
+			make new note with properties {name:"$title", body:"$title" & "<br><br>" & "$body"}
+		end tell
+	end tell
+end tell
+EOF
+}
+
+# Add reminder to Reminders.app (OS X 10.8)
+# Usage: `remind 'foo'` or `echo 'foo' | remind`
+function remind() {
+	local text
+	if [ -t 0 ]; then
+		text="$1" # argument
+	else
+		text=$(cat) # pipe
+	fi
+	osascript >/dev/null <<EOF
+tell application "Reminders"
+	tell the default list
+		make new reminder with properties {name:"$text"}
+	end tell
+end tell
+EOF
+}
+
+# Manually remove a downloaded app or file from the quarantine
+function unquarantine() {
+	for attribute in com.apple.metadata:kMDItemDownloadedDate com.apple.metadata:kMDItemWhereFroms com.apple.quarantine; do
+		xattr -r -d "$attribute" "$@"
+	done
+}
+
+
+# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume 7'"
+alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"

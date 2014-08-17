@@ -14,11 +14,6 @@ export ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh-custom
 # time that oh-my-zsh is loaded.
 
 export ZSH_THEME="candy-kingdom-custom"
-#export ZSH_THEME="candy-kingdom"
-#export ZSH_THEME="bira"
-#export ZSH_THEME="aussiegeek"
-#export ZSH_THEME="fino"
-#export ZSH_THEME="random"
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="true"
