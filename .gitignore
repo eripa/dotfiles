@@ -6,3 +6,4 @@ hg-prompt/prompt.pyc
 .*.swo
 .*.swp
 .swp
+.netrwhist
