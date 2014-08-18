@@ -9,6 +9,17 @@ execute pathogen#infect()
 let g:rehash256 = 1
 color molokai
 
+"" NERDTRee
+" open automatically
+autocmd vimenter * NERDTree
+" shortcut:
+map <C-n> :NERDTreeToggle<CR>
+" close Vim if only NERDTree is left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" open NERDTree if vim is launched without argument
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " set our tabs to two spaces
 set ts=2
 
