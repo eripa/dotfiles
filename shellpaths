@@ -22,7 +22,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # Node version manager
-[[ -r "~/.nvm/nvm.sh" ]] && source ~/.nvm/nvm.sh
+#source $(brew --prefix nvm)/nvm.sh
+#export NVM_DIR=~/.nvm
 
 # chruby
 if [[ -r "/usr/local/share/chruby/chruby.sh" ]] ; then
