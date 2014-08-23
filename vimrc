@@ -12,6 +12,8 @@ color molokai
 "" NERDTRee
 " open automatically
 autocmd vimenter * NERDTree
+" goto filebuffer
+autocmd VimEnter * wincmd p
 " shortcut:
 map <C-n> :NERDTreeToggle<CR>
 " close Vim if only NERDTree is left
@@ -22,6 +24,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " set our tabs to two spaces
 set ts=2
+set shiftwidth=2
 
 " turn syntax highlighting on by default
 syntax on
