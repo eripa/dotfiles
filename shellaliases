@@ -131,7 +131,7 @@ function screenshot.setpng() {
 }
 
 function gi() {
-	curl http://www.gitignore.io/api/$@ ;
+	curl -s https://www.gitignore.io/api/$@ ;
 }
 
 # Logout from GUI and terminal
