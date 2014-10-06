@@ -9,7 +9,8 @@
 #########################################################################
 # Tool settings
 #########################################################################
-if [ "xx$(which boot2docker)" = "xx" ] ; then
+which boot2docker &> /dev/null
+if [ $? -eq 0 ] ; then
   if [ "$(boot2docker status)" = "running" ] ; then
     $(boot2docker shellinit)
   fi
