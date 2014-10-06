@@ -29,11 +29,13 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if [[ -r "/usr/local/share/chruby/chruby.sh" ]] ; then
   # Linux
   source /usr/local/share/chruby/chruby.sh
-else
+  source /usr/local/share/chruby/auto.sh
+elif [[ -r "/usr/local/opt/chruby/share/chruby/chruby.sh" ]] ; then
   # OS X - Homebrew
   source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/auto.sh
 fi
 
-source /usr/local/share/chruby/auto.sh
-chruby ruby-2.1
+if which chruby &> /dev/null ; then chruby ruby-2.1 ; fi
+
 

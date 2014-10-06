@@ -9,8 +9,10 @@
 #########################################################################
 # Tool settings
 #########################################################################
-if [ $(which boot2docker) -a "$(boot2docker status)" = "running" ] ; then
-  $(boot2docker shellinit)
+if [ "xx$(which boot2docker)" = "xx" ] ; then
+  if [ "$(boot2docker status)" = "running" ] ; then
+    $(boot2docker shellinit)
+  fi
 fi
 
 #########################################################################
