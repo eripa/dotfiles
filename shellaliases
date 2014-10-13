@@ -156,7 +156,14 @@ alias find_pi="sudo /usr/local/bin/arp-scan --interface=$lan_interface --localne
 alias find_pi_wifi="sudo /usr/local/bin/arp-scan --interface=$wifi_interface --localnet | grep b8:27:eb"
 
 # sshfs mounts
-alias mount_ssh="mkdir ~/${1} &> /dev/null && sshfs -p 22 ${1}: ~/${1} -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,volname=${1}"
+function mount_ssh () {
+  if [ $# -eq 0 ] ; then
+    echo "Please supply a host"
+    return
+  fi
+  mkdir ~/${1} &> /dev/null
+  sshfs -p 22 ${1}: ~/${1} -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,volname=${1}
+}
 
 # Add note to Notes.app (OS X 10.8)
 # Usage: `note 'title' 'body'` or `echo 'body' | note`
