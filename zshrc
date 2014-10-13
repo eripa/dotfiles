@@ -39,3 +39,8 @@ unsetopt AUTO_MENU
 source $ZSH/oh-my-zsh.sh
 
 
+if [ -e ~/.shellmachinespecific ] ; then
+  source ~/.shellmachinespecific
+fi
+
+

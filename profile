@@ -12,9 +12,6 @@ export WINEDITOR='subl -w'
 source ~/.shellvars
 source ~/.shellpaths
 source ~/.shellaliases
-if [ -e ~/.shellmachinespecific ] ; then
-  source ~/.shellmachinespecific
-fi
 
 ###################
 
