@@ -63,6 +63,7 @@ alias osx.hide="defaults write com.apple.finder AppleShowAllFiles -bool false &&
 # Hide/show all desktop icons (useful when presenting)
 alias osx.hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias osx.showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias osx.sethostname="sudo scutil --set HostName $1"
 
 
 
