@@ -12,7 +12,7 @@
 which boot2docker &> /dev/null
 if [ $? -eq 0 ] ; then
   if [ "$(boot2docker status)" = "running" ] ; then
-    $(boot2docker shellinit)
+    $(boot2docker shelliniti 2> /dev/null)
   fi
 fi
 
