@@ -38,6 +38,8 @@ unsetopt AUTO_MENU
 
 source $ZSH/oh-my-zsh.sh
 
+# Enable zsh syntax highlightning
+source $HOME/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [ -e ~/.shellmachinespecific ] ; then
   source ~/.shellmachinespecific
