@@ -21,9 +21,17 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ## pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-# Node version manager
-#source $(brew --prefix nvm)/nvm.sh
-#export NVM_DIR=~/.nvm
+# Setup brew-installed tools
+if which brew > /dev/null ; then
+  # z
+  if [[ -r "$(brew --prefix)/etc/profile.d/z.sh" ]] ; then
+    source $(brew --prefix)/etc/profile.d/z.sh
+  fi
+  
+  # Node version manager
+  #source $(brew --prefix nvm)/nvm.sh
+  #export NVM_DIR=~/.nvm
+fi
 
 # chruby
 if [[ -r "/usr/local/share/chruby/chruby.sh" ]] ; then
