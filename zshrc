@@ -35,12 +35,14 @@ autoload -U zmv
 
 unsetopt CORRECT_ALL
 unsetopt AUTO_MENU
-
 source $ZSH/oh-my-zsh.sh
+
+# Tell zsh to stop bailing on the command when it fails to match a glob pattern
+setopt NO_NOMATCH
 
 # Enable zsh syntax highlightning
 source $HOME/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 if [ -e ~/.shellmachinespecific ] ; then
   source ~/.shellmachinespecific
