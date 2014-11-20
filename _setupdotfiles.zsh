@@ -61,6 +61,7 @@ symlinkifne .zshenv
 symlinkifne .zshrc
 symlinkifne .curlrc
 symlinkifne .wgetrc
+symlinkifne .tmuxrc
 
 popd
 
