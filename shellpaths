@@ -33,17 +33,3 @@ if which brew > /dev/null ; then
   #export NVM_DIR=~/.nvm
 fi
 
-# chruby
-if [[ -r "/usr/local/share/chruby/chruby.sh" ]] ; then
-  # Linux
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
-elif [[ -r "/usr/local/opt/chruby/share/chruby/chruby.sh" ]] ; then
-  # OS X - Homebrew
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
-  source /usr/local/opt/chruby/share/chruby/auto.sh
-fi
-
-if which chruby &> /dev/null ; then chruby ruby-2.1 ; fi
-
-

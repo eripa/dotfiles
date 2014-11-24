@@ -28,7 +28,7 @@ export CASE_SENSITIVE="true"
 # export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
-plugins=(git brew gem osx compleat sublime wakeonlan ssh-agent)
+plugins=(git brew gem chruby osx compleat sublime wakeonlan ssh-agent)
 
 # Activate zmv
 autoload -U zmv
