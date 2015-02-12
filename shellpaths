@@ -15,6 +15,10 @@ export PATH=/usr/local/bin:$PATH
 # Dev
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# Go
+export GOPATH="${HOME}/dev/gocode"
+export PATH="${GOPATH}/bin:${PATH}"
+
 # Python VirtualEnv Wrapper
 [[ -r "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 
