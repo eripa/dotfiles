@@ -47,7 +47,10 @@ alias gitx="open -a gitx"
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 # Flush the DNS on Mac
-alias network.dnsflush='dscacheutil -flushcache'
+function network.dnsflush() {
+  sudo discoveryutil mdnsflushcache
+  sudo discoveryutil udnsflushcaches
+}
 
 # Copy and paste and prune the usless newline
 alias pbcopynn='tr -d "\n" | pbcopy'
