@@ -11,7 +11,7 @@ color molokai
 
 "" NERDTRee
 " open automatically
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 " goto filebuffer
 autocmd VimEnter * wincmd p
 " shortcut:
