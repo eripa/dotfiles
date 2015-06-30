@@ -61,7 +61,9 @@ symlinkifne .zshenv
 symlinkifne .zshrc
 symlinkifne .curlrc
 symlinkifne .wgetrc
-symlinkifne .tmuxrc
+symlinkifne .tmux.conf
+symlinkifne .tmux.master
+symlinkifne .tmux.shared
 
 popd
 
