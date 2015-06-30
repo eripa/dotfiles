@@ -101,8 +101,13 @@ alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v
 # -l Long format
 # -h Short size suffixes (B, K, M, G, P)
 # -p Postpend slash to folders
-alias ls='ls -G -h -p '
-alias ll='ls -l -G -h -p '
+if [ "$(uname -s)" = "OpenBSD" ] ; then
+  alias ls='ls -h -p '
+  alias ll='ls -l -h -p '
+else
+  alias ls='ls -G -h -p '
+  alias ll='ls -l -G -h -p '
+fi
 alias mmv='noglob zmv -W'
 
 #########################################
