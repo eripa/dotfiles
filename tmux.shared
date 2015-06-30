@@ -59,13 +59,13 @@ set -s escape-time 0
 set-option -g status-utf8 on
 # set-option -g status-justify centre
 set-option -g status-justify left
-set-option -g status-bg colour16
+set-option -g status-bg colour237
 set-option -g status-fg white
 set-option -g status-left-length 40
 
-setw -g window-status-bg colour16
+setw -g window-status-bg colour13
 setw -g window-status-fg white
-setw -g window-status-current-fg colour46
+setw -g window-status-current-fg colour237
 
 setw -g window-status-activity-attr default
 setw -g window-status-activity-fg colour192
