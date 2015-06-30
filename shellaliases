@@ -48,6 +48,10 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 
 # Flush the DNS on Mac
 function network.dnsflush() {
+  sudo dscacheutil -flushcache
+  sudo killall -HUP mDNSResponder
+}
+function network.dnsflush2() {
   sudo discoveryutil mdnsflushcache
   sudo discoveryutil udnsflushcaches
 }
