@@ -2,31 +2,28 @@
 
 source-file ~/.tmux.shared
 
-# change bind key to C-v
-set-option -g prefix C-v
-
-# prefix again goes to last window
-bind-key M-C-b last-window
+# change bind key to C-n
+set-option -g prefix C-n
 
 # reload
 bind r source-file ~/.tmux.master
 
 # keybindings to make resizing easier
-bind -r M-C-h resize-pane -L
-bind -r M-C-j resize-pane -D
-bind -r M-C-k resize-pane -U
-bind -r M-C-l resize-pane -R
+#bind -r M-C-h resize-pane -L
+#bind -r M-C-j resize-pane -D
+#bind -r M-C-k resize-pane -U
+#bind -r M-C-l resize-pane -R
 
 # make it so that I can hold down prefix key for these
-bind-key M-C-d detach
-bind-key M-C-n next-window
-bind-key M-C-p previous-window
+bind-key C-d detach
+bind-key C-n next-window
+bind-key C-p previous-window
 
 # window navigation
-bind-key -n M-C-h prev
-bind-key -n M-C-l next
-bind-key -n M-C-n select-pane -t :.-
-bind-key -n M-C-p select-pane -t :.+
+#bind-key -n M-C-h prev
+#bind-key -n M-C-l next
+#bind-key -n M-C-n select-pane -t :.-
+#bind-key -n M-C-p select-pane -t :.+
 
 # Setup 'v' to begin selection as in Vim
 bind-key -t vi-copy v begin-selection
