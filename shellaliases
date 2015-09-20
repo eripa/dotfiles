@@ -58,6 +58,7 @@ function network.dnsflush2() {
 
 # Copy and paste and prune the usless newline
 alias pbcopynn='tr -d "\n" | pbcopy'
+alias pbclean='pbpaste | pbcopy' # Remove any formatting from clipboard
 
 # Set the extended MacOS attributes on a file such that Quicklook will open it as text
 alias finder.astext='xattr -wx com.apple.FinderInfo "54 45 58 54 21 52 63 68 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00" $1'
