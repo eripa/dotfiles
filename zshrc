@@ -28,7 +28,7 @@ export CASE_SENSITIVE="true"
 # export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
-plugins=(brew gem chruby osx compleat sublime sudo wakeonlan jsontools meteor npm vagrant tmuxinator)
+plugins=(brew gem osx compleat sublime sudo wakeonlan jsontools)
 
 # Activate zmv
 autoload -U zmv

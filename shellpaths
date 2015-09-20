@@ -4,7 +4,6 @@
 
 # Scripts
 export PATH=$PATH:.
-export PATH=$PATH:~/bin
 export PATH=$PATH:~/.dotfiles/scripts
 export PATH=$PATH:$HOME/Dropbox/scripts
 
@@ -18,22 +17,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Go
 export GOPATH="${HOME}/dev/gocode"
 export PATH="${GOPATH}/bin:${PATH}"
-
-# Python VirtualEnv Wrapper
-[[ -r "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
-
-## pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# Setup brew-installed tools
-if which brew > /dev/null ; then
-  # z
-  if [[ -r "$(brew --prefix)/etc/profile.d/z.sh" ]] ; then
-    source $(brew --prefix)/etc/profile.d/z.sh
-  fi
-  
-  # Node version manager
-  #source $(brew --prefix nvm)/nvm.sh
-  #export NVM_DIR=~/.nvm
-fi
 

@@ -23,7 +23,3 @@ shopt -s cmdhist
 # Load Matthew's Git bash prompt
 source ~/.dotfiles/bash_gitprompt
 
-# Load Brew's git bash completion if existing
-[[ -r /usr/local/Cellar/git/1.8.0.1/etc/bash_completion.d/git-completion.bash ]] && source /usr/local/Cellar/git/1.8.0.1/etc/bash_completion.d/git-completion.bash
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
