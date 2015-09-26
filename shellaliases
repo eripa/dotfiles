@@ -102,7 +102,7 @@ alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v
 # -l Long format
 # -h Short size suffixes (B, K, M, G, P)
 # -p Postpend slash to folders
-if [ "$(uname -s)" = "OpenBSD" ] ; then
+if [ "$(uname -s)" = "OpenBSD" -o "$(uname -n)" = "alpine" ] ; then
   alias ls='ls -h -p '
   alias ll='ls -l -h -p '
 else
