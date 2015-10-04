@@ -23,7 +23,7 @@ alias sudo='sudo '
 
 # Utilities
 alias zipall='for D in *; do zip -r "$D" "$D"; done'
-
+alias generatepassword='openssl rand -base64 37 | cut -c1-39'
 alias pram.reset='sudo nvram boot-args=”-p -r”'
 
 alias rubygems.update='sudo gem update --system'
