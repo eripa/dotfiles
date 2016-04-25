@@ -4,6 +4,9 @@
 # AUTHOR:
 #   Geoffrey Grosenbach http://peepcode.com
 
+# Emacs bindkey (regular)
+bindkey -e
+
 # Colors
 autoload -Uz colors && colors
 setopt prompt_subst
@@ -23,10 +26,13 @@ setopt NO_NOMATCH
 # Prompt
 local linetwo="%(?,%{$fg[white]%}\$%{$reset_color%},%{$fg[red]%}✗%{$reset_color%})"
 
-PROMPT='%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{$fg[green]%}%/$(~/.dotfiles/scripts/git-cwd-info)%{$reset_color%}
+PROMPT='%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{$fg[green]%}%~$(~/.dotfiles/scripts/git-cwd-info)%{$reset_color%}
 ${linetwo} %{$reset_color%}'
 
 # Load completions for Ruby, Git, etc.
 autoload compinit
 compinit
 
+# zsh-syntax-highlighting
+source "$HOME/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
