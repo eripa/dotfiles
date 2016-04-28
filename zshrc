@@ -6,6 +6,22 @@
 
 # Emacs bindkey (regular)
 bindkey -e
+# Fix delete key on various keyboards
+bindkey "^[[3~"  delete-char
+bindkey "^[3;5~" delete-char
+
+# Misc tweaks
+setopt nobeep
+setopt AUTO_CD # cd without cd
+unsetopt flowcontrol # ^s forward-search instead of freezeing input
+
+# History
+HISTSIZE=2000
+SAVEHIST=2000
+HISTFILE=~/.history
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
 # Colors
 autoload -Uz colors && colors
