@@ -16,9 +16,8 @@ setopt AUTO_CD # cd without cd
 unsetopt flowcontrol # ^s forward-search instead of freezeing input
 
 # History
-HISTSIZE=2000
-SAVEHIST=2000
-HISTFILE=~/.history
+HISTSIZE=6000
+SAVEHIST=6000
 setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
