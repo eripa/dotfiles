@@ -35,5 +35,4 @@ bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 
 # Misc
 setw -g aggressive-resize on
-set-option -g status-utf8 on
 set -g history-limit 100000

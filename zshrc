@@ -14,6 +14,8 @@ bindkey "^[3;5~" delete-char
 setopt nobeep
 setopt AUTO_CD # cd without cd
 unsetopt flowcontrol # ^s forward-search instead of freezeing input
+setopt menucomplete
+zstyle ':completion:*' menu select # pretty menu selection
 
 # History
 HISTSIZE=6000
