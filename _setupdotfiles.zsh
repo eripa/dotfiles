@@ -64,6 +64,7 @@ symlinkifne .wgetrc
 symlinkifne .tmux.conf
 symlinkifne .tmux.master
 symlinkifne .tmux.shared
+symlinkifne .tmux.macos
 
 popd
 
