@@ -1,6 +1,7 @@
 [user]
   name = Eric Ripa
   email = eric@ripa.io
+  signingkey = 4CDAE555
 
 [color]
   ui = auto
@@ -104,7 +105,7 @@
   lp = log -p
   lod = log --oneline --decorate
   lpo = log --pretty=oneline --abbrev-commit --graph --decorate --all
-  lg = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lg = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an %C(auto)%G?>%Creset' --abbrev-commit --date=relative
   l1 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lgg = log --graph
   lf = log --pretty=fuller
@@ -183,3 +184,8 @@
   compactionHeuristic = true
 [interactive]
   diffFilter = diff-highlight
+[gpg]
+  program = /usr/local/MacGPG2/bin/gpg2
+[commit]
+  gpgsign = true
+
