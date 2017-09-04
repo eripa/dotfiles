@@ -5,7 +5,7 @@
 ###################
 # Set vim as our default command line editor and sublime as gui editor
 export EDITOR='vim'
-export WINEDITOR='subl -w'
+export WINEDITOR='code'
 
 ###################
 # Load paths and environment variables
