@@ -15,7 +15,7 @@ function symlinkifne {
           echo "  Unlinking $1"
           
           # create the link
-          export DOTLESS=`echo $1 | sed s/.//`
+          export DOTLESS=$(basename $1 | sed 's/^\.//')
           echo "  Symlinking $DOTFILESDIRRELATIVETOHOME/$DOTLESS to $1"
           ln -s $DOTFILESDIRRELATIVETOHOME/$DOTLESS $1
       else
@@ -24,7 +24,7 @@ function symlinkifne {
     # does not exist
     else
       # create the link
-      export DOTLESS=`echo $1 | sed s/.//`
+      export DOTLESS=$(basename $1 | sed 's/^\.//')
       echo "  Symlinking $DOTFILESDIRRELATIVETOHOME/$DOTLESS to $1"
       ln -s $DOTFILESDIRRELATIVETOHOME/$DOTLESS $1
     fi
@@ -34,8 +34,8 @@ function symlinkifne {
 echo "This script must be run from the dotfiles directory"
 echo "Setting up..."
 
-#export DOTFILESDIRRELATIVETOHOME=$PWD
-export DOTFILESDIRRELATIVETOHOME=.dotfiles
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+export DOTFILESDIRRELATIVETOHOME=$DIR
 echo "DOTFILESDIRRELATIVETOHOME = $DOTFILESDIRRELATIVETOHOME"
 
 pushd ~
@@ -65,6 +65,8 @@ symlinkifne .tmux.conf
 symlinkifne .tmux.master
 symlinkifne .tmux.shared
 symlinkifne .tmux.macos
+symlinkifne .gnupg/gpg.conf
+symlinkifne .gnupg/gpg-agent.conf
 
 popd
 
