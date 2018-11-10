@@ -1,7 +1,7 @@
 [user]
   name = Eric Ripa
   email = eric@ripa.io
-  signingkey = 4CDAE555
+  signingkey = 6E5305EA
 
 [color]
   ui = auto
@@ -182,8 +182,6 @@
   insteadOf = git://github.com/
 [diff]
   compactionHeuristic = true
-[interactive]
-  diffFilter = diff-highlight
 [gpg]
   program = /usr/local/MacGPG2/bin/gpg2
 [commit]
