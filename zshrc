@@ -59,3 +59,5 @@ compinit
 # zsh-syntax-highlighting
 source "$HOME/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
