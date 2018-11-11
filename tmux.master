@@ -15,5 +15,3 @@ bind-key C-p previous-window
 
 # Misc
 setw -g aggressive-resize on
-
-if-shell 'test "$(uname)" = "Darwin"' 'source ~/.tmux.macos'
