@@ -4,22 +4,22 @@ export UNLINK=true
 
 function symlinkifne {
     echo "WORKING ON: $1"
-    
+
     # does it exist
     if [[ -a $1 ]]; then
       echo "  WARNING: $1 already exists."
-      
+
       # If Unlink is requested
       if [ "$UNLINK" = "true" ]; then
           unlink $1
           echo "  Unlinking $1"
-          
+
           # create the link
           export DOTLESS=$(basename $1 | sed 's/^\.//')
           echo "  Symlinking $DOTFILESDIRRELATIVETOHOME/$DOTLESS to $1"
           ln -s $DOTFILESDIRRELATIVETOHOME/$DOTLESS $1
       else
-        echo "  SKIPPING $1."  
+        echo "  SKIPPING $1."
       fi
     # does not exist
     else
@@ -42,10 +42,8 @@ pushd ~
 
 symlinkifne .bash_profile
 symlinkifne .bashrc
-symlinkifne .conf
 symlinkifne .gitconfig
 symlinkifne .gitignore
-symlinkifne .hgrc
 symlinkifne .profile
 symlinkifne .shellactivities
 symlinkifne .shellaliases
@@ -56,7 +54,6 @@ symlinkifne .vimrc
 symlinkifne .vim
 symlinkifne .zlogout
 symlinkifne .zprofile
-#symlinkifne .zsh
 symlinkifne .zshenv
 symlinkifne .zshrc
 symlinkifne .curlrc

@@ -1,59 +1,26 @@
 #!/bin/sh
 
-#########################################
-# Connectivity
-
-
-#########################################
-# Commands to run apps
-
-#########################################
-# Commands to change dirs
-
-#################################
-# Simple Program Name Shortening
-alias g=git
-alias st=subl
-alias sub=subl
-
-
-#############################
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
-
-# Utilities
-alias zipall='for D in *; do zip -r "$D" "$D"; done'
-alias generatepassword='openssl rand -base64 37 | cut -c1-39'
 alias pram.reset='sudo nvram boot-args=”-p -r”'
-
-alias rubygems.update='sudo gem update --system'
 alias brew.update='brew update && brew upgrade && brew cleanup'
 alias brew.caskupdate='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
 alias osx.update='sudo softwareupdate -i -a'
-alias npm.update='sudo npm update npm -g && npm update -g'
 alias pathogen.update='curl -LSso ~/.dotfiles/vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
 
 alias timemachine.enablelocalversions='sudo tmutil enablelocal'
 alias timemachine.disablelocalversions='sudo tmutil disablelocal'
+alias timemachine.snapshot='tmutil localsnapshot'
+alias timemachine.list.snapshots='tmutil listlocalsnapshotdates /'
 
-alias hexdumpfile='od -h'
+alias scdaemon.reload='gpgconf --reload scdaemon'
 
 # Get week number
 alias week='date +%V'
-
-alias gitx="open -a gitx"
-
-# URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 # Flush the DNS on Mac
 function network.dnsflush() {
   sudo dscacheutil -flushcache
   sudo killall -HUP mDNSResponder
-}
-function network.dnsflush2() {
-  sudo discoveryutil mdnsflushcache
-  sudo discoveryutil udnsflushcaches
 }
 
 # Copy and paste and prune the usless newline
@@ -65,6 +32,7 @@ alias finder.astext='xattr -wx com.apple.FinderInfo "54 45 58 54 21 52 63 68 00 
 
 # Recursively delete `.DS_Store` files
 alias osx.cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
 alias osx.emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
@@ -73,14 +41,12 @@ alias osx.hide="defaults write com.apple.finder AppleShowAllFiles -bool false &&
 # Hide/show all desktop icons (useful when presenting)
 alias osx.hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias osx.showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
 function osx.sethostname() {
   sudo scutil --set HostName "${1}"
   sudo scutil --set LocalHostName
   sudo scutil --set ComputerName "${1}"
 }
-
-
-
 
 # Show network connections
 # Often useful to prefix with SUDO to see more system level network usage
@@ -115,10 +81,7 @@ alias mmv='noglob zmv -W'
 # Utility Functions
 
 # Create a new git repo with one README commit and CD into it
-function git.nr() { mkdir $1; cd $1; git init; touch README; git add README; git commit -mFirst-commit;}
-
-# Restart Apache on Mac
-#alias apacherestart="sudo /usr/sbin/apachectl restart"
+function git.nr() { mkdir $1; cd $1; git init; touch README; git add README; git commit -m 'initial commit';}
 
 # Use Mac OSX Preview to open a man page in a more handsome format
 function manp() {
@@ -237,4 +200,4 @@ function unquarantine() {
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
-alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+# alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"

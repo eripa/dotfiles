@@ -3,16 +3,12 @@
 ########################################################################
 
 # Scripts
-export PATH=$PATH:.
 export PATH=$PATH:~/.dotfiles/scripts
 export PATH=$PATH:$HOME/bin
 
 # Brew
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
-
-# Dev
-export PATH="/usr/local/heroku/bin:$PATH"
 
 # Go
 export GOPATH="${HOME}/dev/gocode"

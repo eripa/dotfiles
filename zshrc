@@ -1,9 +1,3 @@
-# DESCRIPTION:
-#   A simple zsh configuration that gives you 90% of the useful features that I use everyday.
-#
-# AUTHOR:
-#   Geoffrey Grosenbach http://peepcode.com
-
 # Emacs bindkey (regular)
 bindkey -e
 # Fix delete key on various keyboards
@@ -16,13 +10,6 @@ setopt AUTO_CD # cd without cd
 unsetopt flowcontrol # ^s forward-search instead of freezeing input
 setopt menucomplete
 zstyle ':completion:*' menu select # pretty menu selection
-
-# History
-HISTSIZE=6000
-SAVEHIST=6000
-setopt APPEND_HISTORY
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
 
 # Colors
 autoload -Uz colors && colors
@@ -40,11 +27,30 @@ unsetopt AUTO_MENU
 # Tell zsh to stop bailing on the command when it fails to match a glob pattern
 setopt NO_NOMATCH
 
-# Prompt
-local linetwo="%(?,%{$fg[white]%}\$%{$reset_color%},%{$fg[red]%}✗%{$reset_color%})"
+## Powerline-go
+## https://github.com/justjanne/powerline-go
+function powerline_precmd() {
+    PS1="$(~/dev/gocode/bin/powerline-go -error $? \
+        -shell zsh \
+        -newline \
+        -max-width 0 \
+        -mode patched \
+        -modules "venv,user,host,ssh,cwd,perms,git,jobs,exit" \
+        -cwd-mode plain)"
+}
 
-PROMPT='%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{$fg[green]%}%~$(~/.dotfiles/scripts/git-cwd-info)%{$reset_color%}
-${linetwo} %{$reset_color%}'
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
 
 # Load completions for Ruby, Git, etc.
 autoload compinit

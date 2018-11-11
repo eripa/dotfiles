@@ -1,33 +1,10 @@
-#########################################################################
-# Temporary aliases useful for demos, other current projects
-#########################################################################
+## GPG setup ##
 
-#########################################################################
-# Tool paths
-#########################################################################
-
-#########################################################################
-# Tool settings
-#########################################################################
-# Add the following to your shell init to set up gpg-agent automatically for every shell
 if ! pgrep gpg-agent > /dev/null; then
    gpgconf --launch gpg-agent
 fi
 SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) ; export SSH_AUTH_SOCK
 GPG_TTY=$(tty) ; export GPG_TTY
 
-########################################################################
-# Git settings
-# replicate the settings to env vars for SSH (AcceptEnv/SendEnv)
-########################################################################
-#export GIT_AUTHOR_NAME="$(git config --get user.name)"
-#export GIT_AUTHOR_EMAIL="$(git config --get user.email)"
-
-#########################################################################
-# Other variables
-#########################################################################
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
-
-# Disable Homebrew analytics
+## Other variables ##
 export HOMEBREW_NO_ANALYTICS=1
