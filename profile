@@ -1,11 +1,10 @@
 #############################################################
 # Generic configuration that applies to all shells
 #############################################################
-
-###################
-# Set vim as our default command line editor and sublime as gui editor
 export EDITOR='vim'
 export WINEDITOR='code'
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 ###################
 # Load paths and environment variables
@@ -16,6 +15,3 @@ if [ -e ~/.shellmachinespecific ] ; then
   source ~/.shellmachinespecific
 fi
 
-###################
-
-export LANG="en_US.UTF-8"
