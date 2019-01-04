@@ -72,3 +72,7 @@ git update-index --assume-unchanged bash_history
 git update-index --assume-unchanged zsh_history
 git update-index --assume-unchanged zsh-update
 git update-index --assume-unchanged zdirstore
+
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
