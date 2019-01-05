@@ -40,6 +40,7 @@ echo "DOTFILESDIRRELATIVETOHOME = $DOTFILESDIRRELATIVETOHOME"
 
 pushd ~
 
+mkdir -p ~/.gnupg
 symlinkifne .bash_profile
 symlinkifne .bashrc
 symlinkifne .gitconfig
