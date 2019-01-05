@@ -1,9 +1,10 @@
 ## GPG setup ##
-
-if ! pgrep gpg-agent > /dev/null; then
-   gpgconf --launch gpg-agent
+if command -v "gpgconf" >/dev/null 2>&1 ; then
+  if ! pgrep gpg-agent > /dev/null; then
+    gpgconf --launch gpg-agent
+  fi
+  SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) ; export SSH_AUTH_SOCK
 fi
-SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) ; export SSH_AUTH_SOCK
 GPG_TTY=$(tty) ; export GPG_TTY
 
 ## Other variables ##
