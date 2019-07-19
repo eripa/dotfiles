@@ -48,13 +48,19 @@ set-option -g status-bg colour237
 set-option -g status-fg white
 set-option -g status-left-length 40
 
-setw -g window-status-bg colour13
-setw -g window-status-fg white
-setw -g window-status-current-fg colour237
 
-setw -g window-status-activity-attr default
-setw -g window-status-activity-fg colour192
-setw -g window-status-activity-bg colour16
+#setw -g window-status-bg colour13
+#setw -g window-status-fg white
+#setw -g window-status-current-fg colour237
+
+setw -g window-status-style bg=colour237,fg=colour241
+setw -g window-status-current-style fg=colour237,bg=red
+
+
+setw -g window-status-activity-style fg=colour192,bg=colour16
+#setw -g window-status-activity-attr default
+#setw -g window-status-activity-fg colour192
+#setw -g window-status-activity-bg colour16
 
 # monitor activity
 setw -g monitor-activity on

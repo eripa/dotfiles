@@ -27,6 +27,9 @@ unsetopt AUTO_MENU
 # Tell zsh to stop bailing on the command when it fails to match a glob pattern
 setopt NO_NOMATCH
 
+# command with a space character will not be written to $HISTFILE
+setopt HIST_IGNORE_SPACE
+
 ## Powerline-go
 ## https://github.com/justjanne/powerline-go
 function powerline_precmd() {
@@ -61,3 +64,5 @@ source "$HOME/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+autoload -U +X bashcompinit && bashcompinit
