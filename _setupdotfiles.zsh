@@ -63,6 +63,7 @@ symlinkifne .tmux.conf
 symlinkifne .tmux.master
 symlinkifne .tmux.shared
 symlinkifne .tmux.macos
+symlinkifne .bat.conf
 symlinkifne .gnupg/gpg.conf
 symlinkifne .gnupg/gpg-agent.conf
 

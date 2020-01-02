@@ -10,3 +10,5 @@ GPG_TTY=$(tty) ; export GPG_TTY
 ## Other variables ##
 export HOMEBREW_NO_ANALYTICS=1
 
+# bat setting
+export BAT_CONFIG_PATH=~/.bat.conf
