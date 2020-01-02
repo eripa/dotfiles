@@ -38,6 +38,18 @@ function tmux-home() {
   tmux-sess -s home -f ~/.tmux.master $*
 }
 
+function pwg() {
+  num=4
+  special=0
+  if [[ "${1}x" != "x" ]] ; then
+    num=$1
+  fi
+  if [[ "${2}x" != "x" ]] ; then
+    special=$2
+  fi
+  diceware -d - -n $num -s $special
+}
+
 
 alias pram.reset='sudo nvram boot-args=”-p -r”'
 alias brew.update='brew update && brew upgrade && brew cleanup'
