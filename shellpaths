@@ -14,3 +14,5 @@ export PATH=/usr/local/bin:$PATH
 export GOPATH="${HOME}/dev/gocode"
 export PATH="${GOPATH}/bin:${PATH}"
 
+# curl
+export PATH="/usr/local/opt/curl/bin:${PATH}"
