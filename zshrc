@@ -30,16 +30,39 @@ setopt NO_NOMATCH
 # command with a space character will not be written to $HISTFILE
 setopt HIST_IGNORE_SPACE
 
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000
+
+
+# for powerline-go duration module
+zmodload zsh/datetime
+
+function preexec() {
+  __TIMER=$EPOCHREALTIME
+}
+
 ## Powerline-go
 ## https://github.com/justjanne/powerline-go
 function powerline_precmd() {
+    local __ERRCODE=$?
+    local __DURATION=0
+
+    if [ -n $__TIMER ]; then
+      local __ERT=$EPOCHREALTIME
+      __DURATION="$(($__ERT - ${__TIMER:-__ERT}))"
+    fi
+
     PS1="$(~/dev/gocode/bin/powerline-go -error $? \
         -shell zsh \
         -newline \
+        -duration $__DURATION \
         -max-width 0 \
         -mode patched \
-        -modules "venv,user,host,ssh,cwd,perms,git,jobs,exit" \
-        -cwd-mode plain)"
+        -modules "venv,vgo,terraform-workspace,ssh,cwd,perms,git,jobs,exit,duration" \
+        -cwd-mode plain\
+        -cwd-max-depth 0)"
+    unset __TIMER
 }
 
 function install_powerline_precmd() {
