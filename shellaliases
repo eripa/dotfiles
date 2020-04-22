@@ -253,3 +253,33 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 alias hax="noti -t 'System error' -m 'WTF R U DOIN'"
 
+
+function kconf() {
+	local KUBECONFIGS=$HOME/.kube/configs
+	local cfg=$1
+	if [ -z "$1" ] ; then
+		local cfg=$(find "${KUBECONFIGS}" -type f -name "kubeconfig-*.yml" -exec basename {} \; | gsed -rn 's/kubeconfig-(.*)\.yml$/\1/p' | fzf)
+	fi
+	TMPFILE=$(mktemp /tmp/kubeconfig-${cfg}.XXXXXXXX)
+	local KUBECONF=$HOME/.kube/configs/kubeconfig-${cfg}.yml
+	if [ ! -f $KUBECONF ] ; then
+		echo "error: kubeconfig $KUBECONF does not exist."
+		return
+	fi
+	cp $KUBECONF $TMPFILE
+	export KUBECONFIG=$TMPFILE
+	echo "activated $cfg"
+}
+
+function kn() {
+	local ns=$1
+	if [ -z "$1" ] ; then
+		local ns=$(kubectl get namespace -o json | jq '.items[].metadata.name' -r | fzf)
+	fi
+	kubectl config set-context --current --namespace $ns
+	echo "activated $ns"
+}
+
+alias kc="kconf"
+alias k=kubectl
+
