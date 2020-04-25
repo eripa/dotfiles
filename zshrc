@@ -53,13 +53,13 @@ function powerline_precmd() {
       __DURATION="$(($__ERT - ${__TIMER:-__ERT}))"
     fi
 
-    PS1="$(~/dev/gocode/bin/powerline-go -error $? \
+    PS1="$(/usr/local//bin/powerline-go -error $? \
         -shell zsh \
         -newline \
         -duration $__DURATION \
         -max-width 0 \
         -mode patched \
-        -modules "venv,vgo,terraform-workspace,ssh,cwd,perms,git,jobs,exit,duration" \
+        -modules "venv,vgo,kube,terraform-workspace,ssh,cwd,perms,git,jobs,exit,duration" \
         -cwd-mode plain\
         -cwd-max-depth 0)"
     unset __TIMER
@@ -79,7 +79,7 @@ if [ "$TERM" != "linux" ]; then
 fi
 
 # Load completions for Ruby, Git, etc.
-autoload compinit
+autoload -Uz compinit
 compinit
 
 # zsh-syntax-highlighting
@@ -89,3 +89,14 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 autoload -U +X bashcompinit && bashcompinit
+
+
+# because "kubie" doens't load the shell properly
+source ~/.zprofile
+
+# kubectl completion
+source <(kubectl completion zsh)
+
+# autokomplete 'k' in addition to 'kubectl', it's here instead of in .shellalias
+# because it must be run in zsh and not from ~/.profile
+complete -F __start_kubectl k
