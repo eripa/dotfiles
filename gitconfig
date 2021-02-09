@@ -32,6 +32,7 @@
   ph = push
   pl = pull
   sm = submodule
+  addm = !git ls-files --modified | xargs git add
   spull = !git-svn fetch && git-svn rebase
   spush = !git-svn dcommit
   sync = !git pull && git push
@@ -190,3 +191,8 @@
 [commit]
   gpgsign = true
 
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
+	autosquash = true
