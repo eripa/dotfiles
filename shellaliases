@@ -260,14 +260,7 @@ function kconf() {
 	if [ -z "$1" ] ; then
 		local cfg=$(find "${KUBECONFIGS}" -type f -name "kubeconfig-*.yml" -exec basename {} \; | gsed -rn 's/kubeconfig-(.*)\.yml$/\1/p' | fzf)
 	fi
-	TMPFILE=$(mktemp /tmp/kubeconfig-${cfg}.XXXXXXXX)
-	local KUBECONF=$HOME/.kube/configs/kubeconfig-${cfg}.yml
-	if [ ! -f $KUBECONF ] ; then
-		echo "error: kubeconfig $KUBECONF does not exist."
-		return
-	fi
-	cp $KUBECONF $TMPFILE
-	export KUBECONFIG=$TMPFILE
+	export KUBECONFIG=$HOME/.kube/configs/kubeconfig-${cfg}.yml
 	echo "activated $cfg"
 }
 
